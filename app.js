@@ -115,33 +115,71 @@ function showDetails(id){
   }
   
   issueDetails.innerHTML = `
-    <h3>Issue #${issue.id} — ${issue.location}</h3>
-    <p class="muted">Type: ${issue.issue_type} • Severity: ${issue.severity} • Status: ${issue.status}</p>
-    <p><strong>Reported:</strong> ${issue.reported_date || 'N/A'}</p>
-    <p><strong>Current Usage:</strong> ${issue.current_usage || 'N/A'}</p>
-    <p><strong>Expected Usage:</strong> ${issue.expected_usage || 'N/A'}</p>
-    <p><strong>Deviation:</strong> ${formatDeviation(issue.energy_deviation_percentage)}</p>
-    <p><strong>Description:</strong> ${issue.description || ''}</p>
-    <p><strong>Pattern Analysis:</strong> ${issue.pattern_analysis || 'N/A'}</p>
-    <p><strong>Last Maintenance:</strong> ${issue.last_maintenance || 'N/A'}</p>
-    <p><strong>External Factors:</strong> ${issue.external_factors || 'N/A'}</p>
-    ${historyHTML}
-    <div id="chart-wrapper"></div>
-    <div class="edit-row">
-      <label for="status-edit">Status:</label>
-      <select id="status-edit">
-        <option>Open</option>
-        <option>In Progress</option>
-        <option>Resolved</option>
-      </select>
-    </div>
-    <div class="edit-row">
-      <label for="solution-edit">Solution / Notes:</label>
-      <textarea id="solution-edit" rows="4" style="width:100%">${issue.solution ? issue.solution : ''}</textarea>
-    </div>
-    <div style="margin-top:8px">
-      <button id="save-issue" class="btn">Save (in-memory)</button>
-    </div>
+    <table class="details-table" id="issue-details-table">
+      <tbody>
+        <tr>
+          <td id="issue-detail-title" class="details-block">
+            <h3>Issue #${issue.id} — ${issue.location}</h3>
+            <p class="muted">Type: ${issue.issue_type} • Severity: ${issue.severity} • Status: ${issue.status}</p>
+            <p><strong>Reported:</strong> ${issue.reported_date || 'N/A'}</p>
+            <p><strong>Current Usage:</strong> ${issue.current_usage || 'N/A'}</p>
+            <p><strong>Expected Usage:</strong> ${issue.expected_usage || 'N/A'}</p>
+            <p><strong>Deviation:</strong> ${formatDeviation(issue.energy_deviation_percentage)}</p>
+            <p><strong>Description:</strong> ${issue.description || ''}</p>
+            <p><strong>Pattern Analysis:</strong> ${issue.pattern_analysis || 'N/A'}</p>
+            <p><strong>Last Maintenance:</strong> ${issue.last_maintenance || 'N/A'}</p>
+            <p><strong>External Factors:</strong> ${issue.external_factors || 'N/A'}</p>
+          </td>
+        </tr>
+        <tr>
+          <td id="monthly-history" class="details-block">
+            ${historyHTML}
+          </td>
+        </tr>
+        <tr>
+          <td id="chart-wrapper" class="details-block"></td>
+        </tr>
+        <tr>
+          <td id="status-dropdown" class="details-block">
+            <table class="edit-row">
+              <tbody>
+                <tr>
+                  <td><label for="status-edit">Status:</label></td>
+                  <td>
+                    <select id="status-edit">
+                      <option>Open</option>
+                      <option>In Progress</option>
+                      <option>Resolved</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td id="solution-notes" class="details-block">
+            <table class="edit-row">
+              <tbody>
+                <tr>
+                  <td><label for="solution-edit">Solution / Notes:</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <textarea id="solution-edit" rows="4" style="width:100%">${issue.solution ? issue.solution : ''}</textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td id="save-button" class="details-block">
+            <button id="save-issue" class="btn">Save (in-memory)</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   `;
 
   // set current status

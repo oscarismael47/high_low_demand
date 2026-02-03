@@ -24,6 +24,13 @@ table{width:100%;border-collapse:collapse;font-size:13px}
 thead th{text-align:left;padding:10px 8px;border-bottom:1px solid #e6e9ee;background:#fafafa}
 tbody td{padding:10px 8px;border-bottom:1px solid #f1f5f9}
 .issue-details{background:var(--card);padding:12px;border-radius:8px;margin-top:12px}
+.details-table{width:100%;border-collapse:separate;border-spacing:0 12px}
+.details-block{background:#ffffff;border:1px solid #e6e9ee;border-radius:8px;padding:12px}
+.details-block h3{margin:0 0 6px}
+.details-block p{margin:6px 0}
+.edit-row{width:100%}
+.edit-row td{padding:4px 6px;border-bottom:none}
+#monthly-history table{width:100%;border-collapse:collapse}
 .hidden{display:none}
 .select-row{margin-top:10px}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center}
