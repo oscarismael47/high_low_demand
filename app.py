@@ -121,7 +121,7 @@ else:
     
     # Display table
     df = pd.DataFrame(table_data)
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    st.table(df)
     
     st.markdown("---")
     
