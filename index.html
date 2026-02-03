@@ -14,77 +14,142 @@
     </header>
 
     <main>
-      <section class="controls">
-        <div class="filter">
-          <label for="filter-status">Status</label>
-          <select id="filter-status">
-            <option value="All">All</option>
-            <option value="Open">Open</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Resolved">Resolved</option>
-          </select>
-        </div>
-        <div class="filter">
-          <label for="filter-severity">Severity</label>
-          <select id="filter-severity">
-            <option value="All">All</option>
-            <option value="Critical">Critical</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-          </select>
-        </div>
-        <div class="filter">
-          <label for="filter-type">Type</label>
-          <select id="filter-type">
-            <option value="All">All</option>
-            <option value="High Consumption">High Consumption</option>
-            <option value="Low Consumption">Low Consumption</option>
-            <option value="Intermittent">Intermittent</option>
-          </select>
-        </div>
+      <table class="controls">
+        <tbody>
+          <tr>
+            <td>
+              <table class="filter">
+                <tbody>
+                  <tr><td><label for="filter-status">Status</label></td></tr>
+                  <tr>
+                    <td>
+                      <select id="filter-status">
+                        <option value="All">All</option>
+                        <option value="Open">Open</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td>
+              <table class="filter">
+                <tbody>
+                  <tr><td><label for="filter-severity">Severity</label></td></tr>
+                  <tr>
+                    <td>
+                      <select id="filter-severity">
+                        <option value="All">All</option>
+                        <option value="Critical">Critical</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td>
+              <table class="filter">
+                <tbody>
+                  <tr><td><label for="filter-type">Type</label></td></tr>
+                  <tr>
+                    <td>
+                      <select id="filter-type">
+                        <option value="All">All</option>
+                        <option value="High Consumption">High Consumption</option>
+                        <option value="Low Consumption">Low Consumption</option>
+                        <option value="Intermittent">Intermittent</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="spacer"></td>
+            <td>
+              <button id="export-json" class="btn">Export JSON</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <div class="spacer"></div>
+      <table id="table-info" class="table-info"><tbody><tr><td></td></tr></tbody></table>
 
-        <button id="export-json" class="btn">Export JSON</button>
-      </section>
+      <table class="table-section">
+        <tbody>
+          <tr>
+            <td>
+              <table class="table-wrapper">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table id="issues-table">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Location</th>
+                            <th>Type</th>
+                            <th>Severity</th>
+                            <th>Current Usage</th>
+                            <th>Expected Usage</th>
+                            <th>Deviation</th>
+                            <th>Status</th>
+                            <th>Reported Date</th>
+                            <th>Solution</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-      <div id="table-info" class="table-info"></div>
-
-      <section class="table-section">
-        <div class="table-wrapper">
-          <table id="issues-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Location</th>
-                <th>Type</th>
-                <th>Severity</th>
-                <th>Current Usage</th>
-                <th>Expected Usage</th>
-                <th>Deviation</th>
-                <th>Status</th>
-                <th>Reported Date</th>
-                <th>Solution</th>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="details">
-        <h2>📋 View Issue Details</h2>
-        <div class="select-row">
-          <label for="issue-select">Select an issue to view details:</label>
-          <select id="issue-select"></select>
-        </div>
-        <div id="issue-details" class="issue-details hidden">
-          <div id="chart-container" style="display:none;margin-top:16px">
-            <h4>Usage Trend</h4>
-            <canvas id="monthly-chart"></canvas>
-          </div>
-        </div>
-      </section>
+      <table class="details">
+        <tbody>
+          <tr>
+            <td><h2>📋 View Issue Details</h2></td>
+          </tr>
+          <tr>
+            <td>
+              <table class="select-row">
+                <tbody>
+                  <tr>
+                    <td><label for="issue-select">Select an issue to view details:</label></td>
+                    <td><select id="issue-select"></select></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table id="issue-details" class="issue-details hidden">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table id="chart-container" style="display:none;margin-top:16px">
+                        <tbody>
+                          <tr><td><h4>Usage Trend</h4></td></tr>
+                          <tr><td><canvas id="monthly-chart"></canvas></td></tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </main>
 
     <script src="app.js" defer></script>
