@@ -99,63 +99,43 @@ if not filtered_issues:
     st.warning("No issues match the selected filters.")
 else:
     st.markdown(f"### Found {len(filtered_issues)} issue(s)")
-    st.markdown("---")
-
+    
+    # Prepare data for table
+    table_data = []
     for issue in filtered_issues:
-        with st.container():
-            c1, c2, c3, c4, c5, c6, c7, c8 = st.columns([2,1.2,1.2,1,0.8,1.2,2,0.8])
-
-            with c1:
-                st.write(f"**{issue.get('location')}**")
-                st.caption(f"Issue #{issue.get('id')}")
-
-            with c2:
-                icons = {"Critical": "🔴", "High": "🟠", "Medium": "🟡", "Low": "🟢"}
-                st.write(f"{icons.get(issue.get('severity'), '⚪')} {issue.get('severity')}")
-
-            with c3:
-                st.write(issue.get("issue_type"))
-
-            with c4:
-                st.write(issue.get("current_usage"))
-                dev = issue.get("energy_deviation_percentage")
-                if dev is not None:
-                    st.caption(f"{float(dev):+.1f}%")
-
-            with c5:
-                if st.button("📋", key=f"detail_{issue['id']}"):
-                    show_issue_details(issue)
-
-            with c6:
-                status_options = ["Open", "In Progress", "Resolved"]
-                new_status = st.selectbox(
-                    "",
-                    status_options,
-                    index=status_options.index(issue.get("status", "Open")),
-                    key=f"status_{issue['id']}"
-                )
-
-            with c7:
-                solution = st.text_area(
-                    "",
-                    value=issue.get("solution", ""),
-                    key=f"solution_{issue['id']}",
-                    height=70
-                )
-
-            with c8:
-                if st.button("Save", key=f"save_{issue['id']}"):
-                    issue["status"] = new_status
-                    issue["solution"] = solution
-
-                    json_file = Path(__file__).parent / "consumption_issues.json"
-                    with open(json_file, "w", encoding="utf-8") as f:
-                        json.dump(CONSUMPTION_ISSUES, f, indent=4, ensure_ascii=False)
-
-                    st.success("Saved")
-                    st.rerun()
-
-            st.markdown("---")
+        icons = {"Critical": "🔴", "High": "🟠", "Medium": "🟡", "Low": "🟢"}
+        dev = issue.get("energy_deviation_percentage")
+        deviation_str = f"{float(dev):+.1f}%" if dev is not None else "N/A"
+        
+        table_data.append({
+            "ID": issue.get("id"),
+            "Location": issue.get("location"),
+            "Type": issue.get("issue_type"),
+            "Severity": f"{icons.get(issue.get('severity'), '⚪')} {issue.get('severity')}",
+            "Current Usage": issue.get("current_usage"),
+            "Expected Usage": issue.get("expected_usage"),
+            "Deviation": deviation_str,
+            "Status": issue.get("status"),
+            "Reported Date": issue.get("reported_date"),
+        })
+    
+    # Display table
+    df = pd.DataFrame(table_data)
+    st.dataframe(df, use_container_width=True, hide_index=True)
+    
+    st.markdown("---")
+    
+    # Details section
+    st.markdown("### 📋 View Issue Details")
+    issue_id = st.selectbox(
+        "Select an issue to view details:",
+        options=[issue.get("id") for issue in filtered_issues],
+        format_func=lambda x: f"Issue #{x} - {next((i.get('location') for i in filtered_issues if i.get('id') == x), 'Unknown')}"
+    )
+    
+    selected_issue = next((issue for issue in filtered_issues if issue.get("id") == issue_id), None)
+    if selected_issue:
+        show_issue_details(selected_issue)
 
 # --------------------------------------------------
 # Summary Stats
