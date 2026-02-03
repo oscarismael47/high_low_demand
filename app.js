@@ -191,7 +191,6 @@ function showDetails(id){
     issue.solution = document.getElementById('solution-edit').value;
     applyFilters();
     populateIssueSelect();
-    alert('Saved in memory. Use Export JSON to download changes.');
   });
 
   // Generate chart if monthly_history exists
