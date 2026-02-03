@@ -127,13 +127,14 @@ else:
     
     # Details section
     st.markdown("### 📋 View Issue Details")
+    issue_options = [None] + [issue.get("id") for issue in filtered_issues]
     issue_id = st.selectbox(
         "Select an issue to view details:",
-        options=[issue.get("id") for issue in filtered_issues],
-        format_func=lambda x: f"Issue #{x} - {next((i.get('location') for i in filtered_issues if i.get('id') == x), 'Unknown')}"
+        options=issue_options,
+        format_func=lambda x: "None" if x is None else f"Issue #{x} - {next((i.get('location') for i in filtered_issues if i.get('id') == x), 'Unknown')}"
     )
     
-    selected_issue = next((issue for issue in filtered_issues if issue.get("id") == issue_id), None)
+    selected_issue = next((issue for issue in filtered_issues if issue.get("id") == issue_id), None) if issue_id is not None else None
     if selected_issue:
         show_issue_details(selected_issue)
 
