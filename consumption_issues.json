@@ -1,0 +1,370 @@
+[
+    {
+        "id": 1,
+        "location": "Building A - Floor 2",
+        "issue_type": "High Consumption",
+        "severity": "Critical",
+        "current_usage": "2850 kWh",
+        "expected_usage": "1200 kWh",
+        "reported_date": "2026-02-01",
+        "status": "Resolved",
+        "description": "Unusual spike in power consumption detected on Floor 2. HVAC system appears to be running continuously.",
+        "affected_area": "20 rooms",
+        "estimated_cost": "$5,000",
+        "recommended_action": "Inspect HVAC system and check thermostat settings",
+        "probable_cause": "HVAC thermostat malfunction or sensor failure",
+        "justification_notes": "No scheduled maintenance reported. Building temperature set to 24°C continuously.",
+        "energy_deviation_percentage": 137.5,
+        "monthly_history": {
+            "2025-02": {
+                "usage": "1150 kWh",
+                "status": "normal"
+            },
+            "2025-03": {
+                "usage": "1180 kWh",
+                "status": "normal"
+            },
+            "2025-04": {
+                "usage": "1200 kWh",
+                "status": "normal"
+            },
+            "2025-05": {
+                "usage": "1350 kWh",
+                "status": "normal"
+            },
+            "2025-06": {
+                "usage": "1600 kWh",
+                "status": "normal"
+            },
+            "2025-07": {
+                "usage": "1750 kWh",
+                "status": "normal"
+            },
+            "2025-08": {
+                "usage": "1720 kWh",
+                "status": "normal"
+            },
+            "2025-09": {
+                "usage": "1400 kWh",
+                "status": "normal"
+            },
+            "2025-10": {
+                "usage": "1200 kWh",
+                "status": "normal"
+            },
+            "2025-11": {
+                "usage": "1100 kWh",
+                "status": "normal"
+            },
+            "2025-12": {
+                "usage": "1050 kWh",
+                "status": "normal"
+            },
+            "2026-01": {
+                "usage": "1100 kWh",
+                "status": "normal"
+            },
+            "2026-02": {
+                "usage": "2850 kWh",
+                "status": "anomaly"
+            }
+        },
+        "pattern_analysis": "Sudden 137% increase in single month. No historical precedent.",
+        "last_maintenance": "2025-11-15",
+        "occupancy_level": "Normal (20 rooms occupied)",
+        "external_factors": "Temperature dropped to -5°C in February"
+    },
+    {
+        "id": 2,
+        "location": "Building C - Basement",
+        "issue_type": "Low Consumption",
+        "severity": "Medium",
+        "current_usage": "150 kWh",
+        "expected_usage": "600 kWh",
+        "reported_date": "2026-01-30",
+        "status": "In Progress",
+        "description": "Equipment in basement showing unusually low power draw. May indicate equipment malfunction.",
+        "affected_area": "Server room",
+        "estimated_cost": "$2,500",
+        "recommended_action": "Check server status and cooling system",
+        "probable_cause": "Server scaling down or backup server offline",
+        "justification_notes": "Scheduled maintenance performed 2026-01-28. Load transferred to cloud infrastructure.",
+        "energy_deviation_percentage": -75.0,
+        "monthly_history": {
+            "2025-02": {
+                "usage": "620 kWh",
+                "status": "normal"
+            },
+            "2025-03": {
+                "usage": "610 kWh",
+                "status": "normal"
+            },
+            "2025-04": {
+                "usage": "600 kWh",
+                "status": "normal"
+            },
+            "2025-05": {
+                "usage": "610 kWh",
+                "status": "normal"
+            },
+            "2025-06": {
+                "usage": "630 kWh",
+                "status": "normal"
+            },
+            "2025-07": {
+                "usage": "640 kWh",
+                "status": "normal"
+            },
+            "2025-08": {
+                "usage": "635 kWh",
+                "status": "normal"
+            },
+            "2025-09": {
+                "usage": "625 kWh",
+                "status": "normal"
+            },
+            "2025-10": {
+                "usage": "615 kWh",
+                "status": "normal"
+            },
+            "2025-11": {
+                "usage": "620 kWh",
+                "status": "normal"
+            },
+            "2025-12": {
+                "usage": "610 kWh",
+                "status": "normal"
+            },
+            "2026-01": {
+                "usage": "150 kWh",
+                "status": "anomaly"
+            }
+        },
+        "pattern_analysis": "Sharp drop after 2026-01-28 maintenance window. Correlates with cloud migration project.",
+        "last_maintenance": "2026-01-28",
+        "occupancy_level": "Minimal - 2 servers active, 8 offline",
+        "external_factors": "Cloud infrastructure migration in progress"
+    },
+    {
+        "id": 3,
+        "location": "Building B - Main Hall",
+        "issue_type": "High Consumption",
+        "severity": "High",
+        "current_usage": "1950 kWh",
+        "expected_usage": "900 kWh",
+        "reported_date": "2026-02-02",
+        "status": "Open",
+        "description": "Lighting system consuming more power than usual. Possible LED conversion incomplete.",
+        "affected_area": "Main hall and corridors",
+        "estimated_cost": "$1,200",
+        "recommended_action": "Audit all lighting fixtures and complete LED migration",
+        "probable_cause": "LED conversion project ongoing. Old halogen lights not yet removed.",
+        "justification_notes": "Phase 1 of LED conversion completed 2026-01-15. Phase 2 starts 2026-02-15. Double lighting setup temporary.",
+        "energy_deviation_percentage": 116.7,
+        "monthly_history": {
+            "2025-02": {
+                "usage": "850 kWh",
+                "status": "normal"
+            },
+            "2025-03": {
+                "usage": "820 kWh",
+                "status": "normal"
+            },
+            "2025-04": {
+                "usage": "890 kWh",
+                "status": "normal"
+            },
+            "2025-05": {
+                "usage": "950 kWh",
+                "status": "normal"
+            },
+            "2025-06": {
+                "usage": "980 kWh",
+                "status": "normal"
+            },
+            "2025-07": {
+                "usage": "1000 kWh",
+                "status": "normal"
+            },
+            "2025-08": {
+                "usage": "990 kWh",
+                "status": "normal"
+            },
+            "2025-09": {
+                "usage": "920 kWh",
+                "status": "normal"
+            },
+            "2025-10": {
+                "usage": "880 kWh",
+                "status": "normal"
+            },
+            "2025-11": {
+                "usage": "860 kWh",
+                "status": "normal"
+            },
+            "2025-12": {
+                "usage": "850 kWh",
+                "status": "normal"
+            },
+            "2026-01": {
+                "usage": "900 kWh",
+                "status": "normal"
+            },
+            "2026-02": {
+                "usage": "1950 kWh",
+                "status": "known_issue"
+            }
+        },
+        "pattern_analysis": "Increase starts exactly after LED conversion Phase 1. Expected to normalize after Phase 2 (2026-02-15).",
+        "last_maintenance": "2026-01-15",
+        "occupancy_level": "Normal - 200+ daily visitors",
+        "external_factors": "Scheduled LED conversion project in progress"
+    },
+    {
+        "id": 4,
+        "location": "Building A - Parking Lot",
+        "issue_type": "Intermittent",
+        "severity": "Low",
+        "current_usage": "500-800 kWh",
+        "expected_usage": "600 kWh",
+        "reported_date": "2026-01-28",
+        "status": "Open",
+        "description": "Parking lot lights flickering intermittently. Loose connections suspected.",
+        "affected_area": "Outdoor parking (north side)",
+        "estimated_cost": "$800",
+        "recommended_action": "Check all electrical connections and repair loose fixtures",
+        "probable_cause": "Loose breaker connection (P4 sector)",
+        "justification_notes": "Issue resolved 2026-02-01. Maintenance team tightened all breaker connections. No further incidents.",
+        "energy_deviation_percentage": 0.0,
+        "monthly_history": {
+            "2025-02": {
+                "usage": "620 kWh",
+                "status": "normal"
+            },
+            "2025-03": {
+                "usage": "600 kWh",
+                "status": "normal"
+            },
+            "2025-04": {
+                "usage": "580 kWh",
+                "status": "normal"
+            },
+            "2025-05": {
+                "usage": "550 kWh",
+                "status": "normal"
+            },
+            "2025-06": {
+                "usage": "520 kWh",
+                "status": "normal"
+            },
+            "2025-07": {
+                "usage": "530 kWh",
+                "status": "normal"
+            },
+            "2025-08": {
+                "usage": "540 kWh",
+                "status": "normal"
+            },
+            "2025-09": {
+                "usage": "570 kWh",
+                "status": "normal"
+            },
+            "2025-10": {
+                "usage": "600 kWh",
+                "status": "normal"
+            },
+            "2025-11": {
+                "usage": "630 kWh",
+                "status": "normal"
+            },
+            "2025-12": {
+                "usage": "640 kWh",
+                "status": "normal"
+            },
+            "2026-01": {
+                "usage": "600 kWh",
+                "status": "resolved"
+            }
+        },
+        "pattern_analysis": "Fluctuations resolved after maintenance. Returns to baseline.",
+        "last_maintenance": "2026-02-01",
+        "occupancy_level": "Normal - 150-200 vehicles",
+        "external_factors": "Winter weather (snow accumulation on lights)",
+        "solution": ""
+    },
+    {
+        "id": 5,
+        "location": "Building D - Conference Center",
+        "issue_type": "High Consumption",
+        "severity": "Critical",
+        "current_usage": "3200 kWh",
+        "expected_usage": "1500 kWh",
+        "reported_date": "2026-02-01",
+        "status": "Open",
+        "description": "Conference center showing extreme power usage during non-business hours.",
+        "affected_area": "All conference rooms",
+        "estimated_cost": "$8,000",
+        "recommended_action": "Install occupancy sensors and upgrade HVAC scheduling",
+        "probable_cause": "HVAC system running 24/7. Occupancy sensors not functional.",
+        "justification_notes": "Occupancy sensors were scheduled for replacement on 2026-02-05 but were not installed yet.",
+        "energy_deviation_percentage": 113.3,
+        "monthly_history": {
+            "2025-02": {
+                "usage": "1450 kWh",
+                "status": "normal"
+            },
+            "2025-03": {
+                "usage": "1480 kWh",
+                "status": "normal"
+            },
+            "2025-04": {
+                "usage": "1500 kWh",
+                "status": "normal"
+            },
+            "2025-05": {
+                "usage": "1580 kWh",
+                "status": "normal"
+            },
+            "2025-06": {
+                "usage": "1650 kWh",
+                "status": "normal"
+            },
+            "2025-07": {
+                "usage": "1700 kWh",
+                "status": "normal"
+            },
+            "2025-08": {
+                "usage": "1680 kWh",
+                "status": "normal"
+            },
+            "2025-09": {
+                "usage": "1550 kWh",
+                "status": "normal"
+            },
+            "2025-10": {
+                "usage": "1480 kWh",
+                "status": "normal"
+            },
+            "2025-11": {
+                "usage": "1420 kWh",
+                "status": "normal"
+            },
+            "2025-12": {
+                "usage": "1400 kWh",
+                "status": "normal"
+            },
+            "2026-01": {
+                "usage": "1450 kWh",
+                "status": "normal"
+            },
+            "2026-02": {
+                "usage": "3200 kWh",
+                "status": "anomaly"
+            }
+        },
+        "pattern_analysis": "Drastic increase in February. HVAC running continuously even outside business hours (6PM-8AM).",
+        "last_maintenance": "2025-12-10",
+        "occupancy_level": "High usage days (conferences), but low after-hours",
+        "external_factors": "Sensor malfunction detected. Weather temp -8°C"
+    }
+]
