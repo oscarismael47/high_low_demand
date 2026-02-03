@@ -1,6 +1,0 @@
-# uv venv
-# .venv\Scripts\activate
-# uv pip install -r requirements.txt
-streamlit>=1.28.0
-pandas>=2.0.0
-python-dateutil>=2.8.0

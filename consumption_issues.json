@@ -7,13 +7,10 @@
         "current_usage": "2850 kWh",
         "expected_usage": "1200 kWh",
         "reported_date": "2026-02-01",
-        "status": "Resolved",
+        "status": "Open",
         "description": "Unusual spike in power consumption detected on Floor 2. HVAC system appears to be running continuously.",
         "affected_area": "20 rooms",
         "estimated_cost": "$5,000",
-        "recommended_action": "Inspect HVAC system and check thermostat settings",
-        "probable_cause": "HVAC thermostat malfunction or sensor failure",
-        "justification_notes": "No scheduled maintenance reported. Building temperature set to 24°C continuously.",
         "energy_deviation_percentage": 137.5,
         "monthly_history": {
             "2025-02": {
@@ -82,13 +79,10 @@
         "current_usage": "150 kWh",
         "expected_usage": "600 kWh",
         "reported_date": "2026-01-30",
-        "status": "In Progress",
+        "status": "Open",
         "description": "Equipment in basement showing unusually low power draw. May indicate equipment malfunction.",
         "affected_area": "Server room",
         "estimated_cost": "$2,500",
-        "recommended_action": "Check server status and cooling system",
-        "probable_cause": "Server scaling down or backup server offline",
-        "justification_notes": "Scheduled maintenance performed 2026-01-28. Load transferred to cloud infrastructure.",
         "energy_deviation_percentage": -75.0,
         "monthly_history": {
             "2025-02": {
@@ -157,9 +151,6 @@
         "description": "Lighting system consuming more power than usual. Possible LED conversion incomplete.",
         "affected_area": "Main hall and corridors",
         "estimated_cost": "$1,200",
-        "recommended_action": "Audit all lighting fixtures and complete LED migration",
-        "probable_cause": "LED conversion project ongoing. Old halogen lights not yet removed.",
-        "justification_notes": "Phase 1 of LED conversion completed 2026-01-15. Phase 2 starts 2026-02-15. Double lighting setup temporary.",
         "energy_deviation_percentage": 116.7,
         "monthly_history": {
             "2025-02": {
@@ -232,9 +223,6 @@
         "description": "Parking lot lights flickering intermittently. Loose connections suspected.",
         "affected_area": "Outdoor parking (north side)",
         "estimated_cost": "$800",
-        "recommended_action": "Check all electrical connections and repair loose fixtures",
-        "probable_cause": "Loose breaker connection (P4 sector)",
-        "justification_notes": "Issue resolved 2026-02-01. Maintenance team tightened all breaker connections. No further incidents.",
         "energy_deviation_percentage": 0.0,
         "monthly_history": {
             "2025-02": {
@@ -304,9 +292,6 @@
         "description": "Conference center showing extreme power usage during non-business hours.",
         "affected_area": "All conference rooms",
         "estimated_cost": "$8,000",
-        "recommended_action": "Install occupancy sensors and upgrade HVAC scheduling",
-        "probable_cause": "HVAC system running 24/7. Occupancy sensors not functional.",
-        "justification_notes": "Occupancy sensors were scheduled for replacement on 2026-02-05 but were not installed yet.",
         "energy_deviation_percentage": 113.3,
         "monthly_history": {
             "2025-02": {
